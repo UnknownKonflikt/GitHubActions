@@ -1,0 +1,34 @@
+name: Deploy to Production
+env: 
+    deploy_url: ${{ secrets.DEPLOYMENT_URL }}
+
+# Defining our Triggers
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 19.x, 20.x]
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '20.x'
+      - name: Install Dependencies
+        run: npm run install
+      - name: Deploy to Production
+        run: |
+          echo "Deploying to Production"
+          # Add your deployment script here
+          curl "${deploy_url}"
