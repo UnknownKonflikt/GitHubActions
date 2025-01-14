@@ -28,8 +28,11 @@ jobs:
       - name: Install Dependencies
         run: npm run install
 
+      - name: Debug Deploy URL
+        run: "echo 'Deploy URL: ${{ secrets.DEPLOY_URL }}'"
+
       - name: Deploy to Production
         run: |
           echo "Deploying to Production"
           # Deploy to the provided deploy URL
-          curl "${ env.deploy_url }"
+          curl "${{ secrets.DEPLOY_URL }}"
