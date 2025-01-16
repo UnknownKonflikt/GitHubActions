@@ -21,7 +21,7 @@ MongoDB (local instance or MongoDB Atlas)
 npm (Node package manager)
 Installation
 Clone the Repository:
-git clone https://github.com/O-KenneDevWorks/tech-quiz-w-CICD.git
+git clone git@github.com:UnknownKonflikt/GitHubActions.git
 Navigate to Project Directory:
 bash cd Tech-Quiz
 
