@@ -1,9 +1,10 @@
 {
   "extends": "../tsconfig.json",
-    "compilerOptions": {
-      "target": "es5",
-      "lib": ["es5", "dom"],
-      "types": ["cypress", "node"]
-    },
-    "include": ["**/*.ts"]
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es5", "dom"],
+    "types": ["cypress", "node"],
+    "allowJs": true   // Allow JavaScript files
+  },
+  "include": ["cypress/**/*.{js,jsx}"]  // Include .js and .jsx files
 }
